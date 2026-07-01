@@ -51,6 +51,9 @@
           <div class="ssw-pane-head"><span class="ssw-badge">01</span><div><h2>Service &amp; Group Details</h2><p>Sahi package chunein — price apne aap update ho jayegi.</p></div></div>
           <div class="ssw-grid">
             <div class="ssw-field"><label>Group Name</label><input class="ssw-input" name="group_name" value="{{ old('group_name') }}" placeholder="Group ka naam"></div>
+            <div class="ssw-field"><label>Booking Date <b class="ssw-req">*</b></label><input class="ssw-input" name="booking_date" type="date" value="{{ old('booking_date') }}" required></div>
+            <div class="ssw-field"><label>Photo Type ID Number <b class="ssw-req">*</b></label><input class="ssw-input" name="photo_id_number" value="{{ old('photo_id_number') }}" required placeholder="Photo Type ID Number"></div>
+
             <div class="ssw-field"><label>Mobile Number <b class="ssw-req">*</b></label><input class="ssw-input" name="mobile_number" value="{{ old('mobile_number') }}" required placeholder="10 digit mobile number"></div>
             <div class="ssw-field"><label>Email</label><input class="ssw-input" name="email" type="email" value="{{ old('email') }}" placeholder="name@example.com"></div>
             <div class="ssw-field">

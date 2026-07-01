@@ -91,6 +91,8 @@ class VipDarshanController extends Controller
         $request->validate([
             'group_name' => 'nullable|string',
             'mobile_number' => 'required|string',
+            'booking_date' => 'required|date',
+            'photo_id_number' => 'required|string',
             'email' => 'nullable|email',
             'service_name' => 'required|string',
             'seva_amount' => 'required|numeric',
@@ -118,6 +120,8 @@ class VipDarshanController extends Controller
             'user_id' => Auth::id(),
             'created_by' => Auth::id(),
             'group_name' => $request->group_name,
+            'booking_date' => $request->booking_date,
+            'photo_id_number' => $request->photo_id_number,
             'mobile_number' => $request->mobile_number,
             'email' => $request->email,
             'service_name' => $request->service_name,

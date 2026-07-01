@@ -160,6 +160,8 @@
                     <p class="vl-panel-sub">Group aur seva ki jaankari bharein.</p>
                     <div class="row g-3">
                         <div class="col-md-6"><label class="vl-label">Group Name</label><input class="form-control" name="group_name" placeholder="Enter group name"></div>
+                        <div class="col-md-6"><label class="vl-label">Booking Date <b class="ssw-req">*</b></label><input class="form-control" name="booking_date" type="date" value="{{ old('booking_date') }}" required></div>
+                        <div class="col-md-6"><label class="vl-label">Photo Type ID Number <b class="ssw-req">*</b></label><input class="form-control" name="photo_id_number" placeholder="Enter Photo Type ID Number" required></div>
                         <div class="col-md-6"><label class="vl-label">Mobile Number</label><input class="form-control" name="mobile_number" required placeholder="10 digit mobile number"></div>
                         <div class="col-md-6"><label class="vl-label">Email</label><input class="form-control" name="email" type="email" placeholder="name@example.com"></div>
                         <div class="col-md-6">

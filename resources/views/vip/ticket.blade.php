@@ -14,7 +14,7 @@
 
         table.head { width:100%; border-collapse:collapse; margin-bottom:2px; }
         table.head td { vertical-align:middle; padding:0; }
-        .head .logo-cell { width:76px; text-align:left; }
+        .head .logo-cell { width:76px; text-align:left;height:76px; vertical-align:middle; }
         .head .logo-cell img { width:66px; height:66px; }
         .head .title-cell { padding:0 14px; vertical-align:middle; }
         .head .title-cell h1 { font-size:20px; margin:0 0 2px; font-weight:bold; letter-spacing:.2px; color:#1a1a1a; }
@@ -97,7 +97,7 @@
                 <h2>{{ $registration->service_name ?? 'VIP Entry Darshan (TTD)' }}</h2>
                 <div class="meta">
                     <p>Report at: {{ $reportAddress }}</p>
-                    <p>{{ $reportDateTime }}</p>
+                    <p style="margin:0; font-size:22px; font-weight:bold; font-family:'Marcellus',serif;">{{ $reportDateTime }} - Booking Date  {{ $registration->booking_date }}</p>
                 </div>
             </td>
             <td class="badge-cell">
@@ -150,7 +150,7 @@
             </td>
         </tr>
     </table>
-
+  
     <table class="footer">
         <tr>
             <td class="note">Note: Electronically generated details do not require any signature</td>

@@ -12,7 +12,7 @@ class VipRegistration extends Model
     protected $fillable = [
         'registration_number', 'user_id', 'created_by', 'group_name', 'mobile_number', 'email', 'service_name', 'seva_amount',
         'no_of_free_laddus', 'hundi_offering', 'total_amount', 'payment_mode', 'tr_date_time', 'payment_status', 'booking_status',
-        'screen_short', 'utr_number', 'slot', 'notes', 'booking_date'
+        'screen_short', 'utr_number', 'slot', 'notes', 'booking_date','photo_id_number'
     ];
 
     protected $casts = [

@@ -30,6 +30,7 @@
           <div class="ssd-info-item"><span>Service</span><b>{{ $registration->service_name }}</b></div>
           <div class="ssd-info-item"><span>Total Amount</span><b class="ssd-amount">₹{{ number_format($registration->total_amount, 2) }}</b></div>
           <div class="ssd-info-item"><span>Slot</span><b>{{ $registration->slot ?? 'Pending' }}</b></div>
+          <div class="ssd-info-item"><span>Booking Date</span><b>{{ optional($registration->booking_date)->format('d-m-Y') ?? 'Not set' }}</b></div>
           <div class="ssd-info-item"><span>Created By</span><b>{{ $registration->creator?->name ?? 'N/A' }}</b></div>
         </div>
       </div>
@@ -93,6 +94,10 @@
           <div class="ssd-field">
             <label>Slot</label>
             <input name="slot" class="ssd-input" value="{{ $registration->slot }}" placeholder="e.g. 10:00 AM">
+          </div>
+          <div class="ssd-field">
+            <label>Booking Date</label>
+            <input type="date" name="booking_date" class="ssd-input" value="{{ optional($registration->booking_date)->format('Y-m-d') }}">
           </div>
           <button class="ssd-btn ssd-btn-primary ssd-btn-block"><i class="fas fa-floppy-disk"></i> Registration Update Karein</button>
         </form>
