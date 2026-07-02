@@ -18,10 +18,10 @@
     <meta property="og:title" content="{{ $settings->meta_title ?? ($settings->site_name ?? 'TTD') }}">
     <meta property="og:description" content="{{ $settings->meta_description ?? 'Book your VIP Entry Darshan at Tirumala Tirupati.' }}">
     @if($settings && !empty($settings->og_image))
-    <meta property="og:image" content="{{ asset('storage/'.$settings->og_image) }}">
+    <meta property="og:image" content="{{ asset($settings->og_image) }}">
     @endif
     @if($settings && !empty($settings->favicon))
-    <link rel="icon" href="{{ asset('storage/'.$settings->favicon) }}">
+    <link rel="icon" href="{{ asset($settings->favicon) }}">
     @endif
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -234,7 +234,7 @@
 <div id="loader">
     <div class="loader-ring">
         @if($settings && !empty($settings->loading_logo))
-            <img class="loader-logo" src="{{ asset('storage/'.$settings->loading_logo) }}" alt="loading">
+            <img class="loader-logo" src="{{ asset($settings->loading_logo) }}" alt="loading">
         @endif
     </div>
     <div class="loader-text">॥ श्री वेंकटेश्वराय नमः ॥</div>
@@ -246,7 +246,7 @@
 
 <nav class="nav">
     <div class="logo-wrap">
-        <img class="logo" src="{{ $settings && $settings->logo ? asset('storage/'.$settings->logo) : asset('images/logo.png') }}" alt="logo">
+        <img class="logo" src="{{ $settings && $settings->logo ? asset($settings->logo) : asset('images/logo.png') }}" alt="logo">
         <div class="brand">{{ $settings->site_name ?? 'TTD' }}<small>{{ $settings->site_title ?? 'VIP Entry Darshan' }}</small></div>
     </div>
     <div class="nav-links">
@@ -369,7 +369,7 @@
     <p class="section-subtitle reveal">A few sacred moments from the hill of the seven peaks.</p>
     <div class="gallery-grid">
         @foreach($banners as $b)
-        <div class="gallery-item reveal"><img src="{{ asset('storage/'.$b) }}" alt="Tirumala glimpse"></div>
+        <div class="gallery-item reveal"><img src="{{ asset($b) }}" alt="Tirumala glimpse"></div>
         @endforeach
     </div>
 </section>
@@ -442,7 +442,7 @@
     <div class="footer-grid">
         <div>
             <div class="footer-brand">
-                <img src="{{ $settings && $settings->footer_logo ? asset('storage/'.$settings->footer_logo) : ($settings && $settings->logo ? asset('storage/'.$settings->logo) : asset('images/logo.png')) }}" alt="logo">
+                <img src="{{ $settings && $settings->footer_logo ? asset($settings->footer_logo) : ($settings && $settings->logo ? asset($settings->logo) : asset('images/logo.png')) }}" alt="logo">
                 <span>{{ $settings->site_name ?? 'TTD' }}</span>
             </div>
             <p class="about-text">{{ $settings->footer_about_text ?? 'Helping pilgrims plan a peaceful, well-organised VIP Entry Darshan at Tirumala.' }}</p>

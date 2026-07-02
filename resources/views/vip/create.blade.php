@@ -234,7 +234,7 @@
                             UPI Number: {{ $account->upi_number ?? 'N/A' }}
                         </div>
                         @if($account->upi_qr_code)
-                        <div class="vl-bank-qr"><img src="{{ asset('storage/'.$account->upi_qr_code) }}" width="140"></div>
+                        <div class="vl-bank-qr"><img src="{{ asset($account->upi_qr_code) }}" width="140"></div>
                         @endif
                     </div>
                     @endforeach

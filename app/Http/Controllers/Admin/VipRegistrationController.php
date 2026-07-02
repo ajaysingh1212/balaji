@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AccountDetail;
 use App\Models\VipPilgrim;
 use App\Models\VipRegistration;
+use App\Support\UploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -67,7 +68,7 @@ class VipRegistrationController extends Controller
 
         $screenShortPath = null;
         if ($request->hasFile('screen_short')) {
-            $screenShortPath = $request->file('screen_short')->store('vip-payments', 'public');
+            $screenShortPath = UploadService::storePublicFile($request->file('screen_short'), 'vip-payments');
         }
 
         $totalAmount = $request->seva_amount + ($request->hundi_offering ?? 0);

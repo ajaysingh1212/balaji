@@ -68,7 +68,7 @@
             <div class="ssw-upload">
               <label>Logo</label>
               <div class="ssw-drop" data-target="logoPreview">
-                <img id="logoPreview" class="ssw-preview {{ $setting->logo ? '' : 'd-none' }}" @if($setting->logo) src="{{ asset('storage/'.$setting->logo) }}" @endif>
+                <img id="logoPreview" class="ssw-preview {{ $setting->logo ? '' : 'd-none' }}" @if($setting->logo) src="{{ asset($setting->logo) }}" @endif>
                 <i class="fas fa-cloud-arrow-up"></i><span>Naya logo choose karein</span>
                 <input type="file" name="logo" accept="image/*" onchange="sswPreview(this,'logoPreview')">
               </div>
@@ -76,7 +76,7 @@
             <div class="ssw-upload">
               <label>Favicon</label>
               <div class="ssw-drop" data-target="faviconPreview">
-                <img id="faviconPreview" class="ssw-preview {{ $setting->favicon ? '' : 'd-none' }}" @if($setting->favicon) src="{{ asset('storage/'.$setting->favicon) }}" @endif>
+                <img id="faviconPreview" class="ssw-preview {{ $setting->favicon ? '' : 'd-none' }}" @if($setting->favicon) src="{{ asset($setting->favicon) }}" @endif>
                 <i class="fas fa-cloud-arrow-up"></i><span>Naya favicon choose karein</span>
                 <input type="file" name="favicon" accept="image/*" onchange="sswPreview(this,'faviconPreview')">
               </div>
@@ -91,7 +91,7 @@
             <div class="ssw-upload">
               <label>Banner {{ $i }}</label>
               <div class="ssw-drop" data-target="bannerPreview{{ $i }}">
-                <img id="bannerPreview{{ $i }}" class="ssw-preview {{ $setting->{'banner_'.$i} ? '' : 'd-none' }}" @if($setting->{'banner_'.$i}) src="{{ asset('storage/'.$setting->{'banner_'.$i}) }}" @endif>
+                <img id="bannerPreview{{ $i }}" class="ssw-preview {{ $setting->{'banner_'.$i} ? '' : 'd-none' }}" @if($setting->{'banner_'.$i}) src="{{ asset($setting->{'banner_'.$i}) }}" @endif>
                 <i class="fas fa-cloud-arrow-up"></i><span>Banner {{ $i }} choose karein</span>
                 <input type="file" name="banner_{{ $i }}" accept="image/*" onchange="sswPreview(this,'bannerPreview{{ $i }}')">
               </div>

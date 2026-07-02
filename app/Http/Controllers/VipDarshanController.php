@@ -6,11 +6,11 @@ use App\Models\AccountDetail;
 use App\Models\SiteSetting;
 use App\Models\VipPilgrim;
 use App\Models\VipRegistration;
+use App\Support\UploadService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class VipDarshanController extends Controller
@@ -112,7 +112,7 @@ class VipDarshanController extends Controller
 
         $screenShortPath = null;
         if ($request->hasFile('screen_short')) {
-            $screenShortPath = $request->file('screen_short')->store('vip-payments', 'public');
+            $screenShortPath = UploadService::storePublicFile($request->file('screen_short'), 'vip-payments');
         }
 
         $registration = VipRegistration::create([

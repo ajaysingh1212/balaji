@@ -87,7 +87,7 @@ href="#">
 @if($profile)
 
 <img
-src="{{ asset('storage/'.$profile->file_name) }}"
+src="{{ asset($profile->file_name) }}"
 class="user-avatar">
 
 @else

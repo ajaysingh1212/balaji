@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AccountDetail;
+use App\Support\UploadService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class AccountDetailController extends Controller
 {
@@ -44,7 +44,7 @@ class AccountDetailController extends Controller
         ]);
 
         if ($request->hasFile('upi_qr_code')) {
-            $data['upi_qr_code'] = $request->file('upi_qr_code')->store('account-details', 'public');
+            $data['upi_qr_code'] = UploadService::storePublicFile($request->file('upi_qr_code'), 'account-details');
         }
 
         AccountDetail::create($data);
@@ -85,9 +85,9 @@ class AccountDetailController extends Controller
 
         if ($request->hasFile('upi_qr_code')) {
             if ($account->upi_qr_code) {
-                Storage::disk('public')->delete($account->upi_qr_code);
+                UploadService::deletePublicFile($account->upi_qr_code);
             }
-            $data['upi_qr_code'] = $request->file('upi_qr_code')->store('account-details', 'public');
+            $data['upi_qr_code'] = UploadService::storePublicFile($request->file('upi_qr_code'), 'account-details');
         }
 
         $account->update($data);
@@ -100,7 +100,7 @@ class AccountDetailController extends Controller
         $account = AccountDetail::findOrFail($id);
 
         if ($account->upi_qr_code) {
-            Storage::disk('public')->delete($account->upi_qr_code);
+            UploadService::deletePublicFile($account->upi_qr_code);
         }
 
         $account->delete();

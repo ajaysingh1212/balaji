@@ -74,7 +74,7 @@
             <div class="ssw-field ssw-span2">
               <label>UPI QR Code</label>
               <div class="ssw-drop" data-target="upiPreview" style="max-width:260px;">
-                <img id="upiPreview" class="ssw-preview {{ $account->upi_qr_code ? '' : 'd-none' }}" @if($account->upi_qr_code) src="{{ asset('storage/'.$account->upi_qr_code) }}" @endif>
+                <img id="upiPreview" class="ssw-preview {{ $account->upi_qr_code ? '' : 'd-none' }}" @if($account->upi_qr_code) src="{{ asset($account->upi_qr_code) }}" @endif>
                 <i class="fas fa-cloud-arrow-up"></i><span>Naya QR choose karein</span>
                 <input type="file" name="upi_qr_code" accept="image/*" onchange="sswPreview(this,'upiPreview')">
               </div>

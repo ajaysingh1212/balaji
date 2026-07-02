@@ -108,7 +108,7 @@
 <body>
 <nav class="nav">
     <div class="logo-wrap">
-        <img class="logo" src="{{ $settings && $settings->logo ? asset('storage/'.$settings->logo) : asset('images/logo.png') }}" alt="logo">
+        <img class="logo" src="{{ $settings && $settings->logo ? asset($settings->logo) : asset('images/logo.png') }}" alt="logo">
         <span class="brand">{{ $settings->site_name ?? 'TTD' }}</span>
     </div>
     <a href="{{ route('vip.landing') }}" class="back">&larr; Back to home</a>

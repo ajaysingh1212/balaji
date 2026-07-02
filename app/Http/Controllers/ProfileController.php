@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Media;
+use App\Models\User;
+use App\Support\UploadService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
-use App\Models\Media;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
@@ -60,7 +61,7 @@ class ProfileController extends Controller
 
     $file = $request->file('profile_photo');
 
-    $path = $file->store('profile','public');
+    $path = UploadService::storePublicFile($file, 'profile');
 
     Media::create([
 
@@ -89,7 +90,7 @@ class ProfileController extends Controller
 
     $file = $request->file('cover_photo');
 
-    $path = $file->store('cover','public');
+    $path = UploadService::storePublicFile($file, 'cover');
 
     Media::create([
 

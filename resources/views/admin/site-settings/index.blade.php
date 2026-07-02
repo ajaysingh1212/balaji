@@ -69,14 +69,14 @@
             </td>
             <td>
               @if($setting->logo)
-                <img src="{{ asset('storage/'.$setting->logo) }}" class="ssi-thumb">
+                <img src="{{ asset($setting->logo) }}" class="ssi-thumb">
               @else
                 <span class="ssi-empty-chip"><i class="fas fa-ban"></i> Nahi hai</span>
               @endif
             </td>
             <td>
               @if($setting->favicon)
-                <img src="{{ asset('storage/'.$setting->favicon) }}" class="ssi-thumb ssi-thumb-sm">
+                <img src="{{ asset($setting->favicon) }}" class="ssi-thumb ssi-thumb-sm">
               @else
                 <span class="ssi-empty-chip"><i class="fas fa-ban"></i> Nahi hai</span>
               @endif

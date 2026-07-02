@@ -18,7 +18,7 @@ $cover = auth()->user()->media->where('collection_name','cover')->first();
 
 <img
 id="coverPreview"
-src="{{ asset('storage/'.$cover->file_name) }}"
+src="{{ asset($cover->file_name) }}"
 class="cover-img">
 
 @else
@@ -60,7 +60,7 @@ $profile = auth()->user()->media->where('collection_name','profile')->first();
 
 <img
 id="profilePreview"
-src="{{ asset('storage/'.$profile->file_name) }}"
+src="{{ asset($profile->file_name) }}"
 class="avatar-img">
 
 @else

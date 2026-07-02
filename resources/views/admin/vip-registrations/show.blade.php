@@ -44,7 +44,7 @@
         @if($registration->screen_short)
         <div class="ssd-screenshot">
           <span class="ssd-screenshot-label">Payment Screenshot</span>
-          <img src="{{ asset('storage/'.$registration->screen_short) }}" alt="Payment screenshot">
+          <img src="{{ asset($registration->screen_short) }}" alt="Payment screenshot">
         </div>
         @endif
       </div>

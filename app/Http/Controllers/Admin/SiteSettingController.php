@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\SiteSetting;
+use App\Support\UploadService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class SiteSettingController extends Controller
 {
@@ -89,7 +89,7 @@ class SiteSettingController extends Controller
 
         foreach (['logo', 'favicon', 'loading_logo', 'og_image', 'banner_1', 'banner_2', 'banner_3', 'banner_4', 'banner_image', 'footer_logo'] as $field) {
             if ($request->hasFile($field)) {
-                $data[$field] = $request->file($field)->store('site-settings', 'public');
+                $data[$field] = UploadService::storePublicFile($request->file($field), 'site-settings');
             }
         }
 
@@ -176,9 +176,9 @@ class SiteSettingController extends Controller
         foreach (['logo', 'favicon', 'loading_logo', 'og_image', 'banner_1', 'banner_2', 'banner_3', 'banner_4', 'banner_image', 'footer_logo'] as $field) {
             if ($request->hasFile($field)) {
                 if ($setting->$field) {
-                    Storage::disk('public')->delete($setting->$field);
+                    UploadService::deletePublicFile($setting->$field);
                 }
-                $data[$field] = $request->file($field)->store('site-settings', 'public');
+                $data[$field] = UploadService::storePublicFile($request->file($field), 'site-settings');
             }
         }
 
@@ -193,7 +193,7 @@ class SiteSettingController extends Controller
 
         foreach (['logo', 'favicon', 'banner_1', 'banner_2', 'banner_3', 'banner_4'] as $field) {
             if ($setting->$field) {
-                Storage::disk('public')->delete($setting->$field);
+                UploadService::deletePublicFile($setting->$field);
             }
         }
 
