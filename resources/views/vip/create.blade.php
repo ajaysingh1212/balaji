@@ -165,12 +165,41 @@
                         <div class="col-md-6"><label class="vl-label">Mobile Number</label><input class="form-control" name="mobile_number" required placeholder="10 digit mobile number"></div>
                         <div class="col-md-6"><label class="vl-label">Email</label><input class="form-control" name="email" type="email" placeholder="name@example.com"></div>
                         <div class="col-md-6">
+
                             <label class="vl-label">Service Name</label>
+
                             <select class="form-select" name="service_name" id="serviceName" required>
-                                <option value="Special Entry Darshan" data-price="300">Special Entry Darshan — ₹300</option>
-                                <option value="Priority Darshan Assistance" data-price="500">Priority Darshan Assistance — ₹500</option>
-                                <option value="Premium Darshan Assistance" data-price="2000">Premium Darshan Assistance — ₹2000</option>
-                                <option value="Express VIP Assistance" data-price="2500">Express VIP Assistance — ₹2500</option>
+                                <option value="Special Darshan" data-price="300">
+                                    Special Darshan — ₹300
+                                </option>
+
+                                <option value="VIP Darshan" data-price="500">
+                                    VIP Darshan — ₹500
+                                </option>
+
+                                <option value="Vasanthotsavam" data-price="1600">
+                                    Vasanthotsavam — ₹1600
+                                </option>
+
+                                <option value="Sahasra Deepalankara Seva" data-price="1600">
+                                    Sahasra Deepalankara Seva — ₹1600
+                                </option>
+
+                                <option value="Arjitha Brahmotsavam" data-price="1600">
+                                    Arjitha Brahmotsavam — ₹1600
+                                </option>
+
+                                <option value="Kalyanotsavam" data-price="2000">
+                                    Kalyanotsavam — ₹2000
+                                </option>
+
+                                <option value="Suprabhataam Seva" data-price="2000">
+                                    Suprabhataam Seva — ₹2000
+                                </option>
+
+                                <option value="Break Darshan" data-price="2500">
+                                    Break Darshan — ₹2500
+                                </option>
                                 <option value="SRIVANI VIP Break Darshan" data-price="10500">SRIVANI VIP Break Darshan — ₹10500</option>
                             </select>
                         </div>

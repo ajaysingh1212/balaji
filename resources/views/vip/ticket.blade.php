@@ -7,14 +7,14 @@
         /* DomPDF-safe CSS only: tables + floats, no flexbox/grid/box-shadow/backdrop-filter */
         @page { margin: 18px 22px; }
         * { box-sizing: border-box; }
-        body { margin:0; font-family: 'Helvetica', 'Arial', sans-serif; color:#1a1a1a; font-size:12px; }
+        body { margin:0; font-family: 'DejaVu Sans', 'Helvetica', 'Arial', sans-serif; color:#1a1a1a; font-size:12px; }
 
         .ticket { border: 2px solid #000; padding: 14px 18px 10px; page-break-after: always; }
         .ticket.last { page-break-after: auto; }
 
         table.head { width:100%; border-collapse:collapse; margin-bottom:2px; }
         table.head td { vertical-align:middle; padding:0; }
-        .head .logo-cell { width:76px; text-align:left;height:76px; vertical-align:middle; }
+        .head .logo-cell { width:96px; text-align:left;height:76px; vertical-align:middle; }
         .head .logo-cell img { width:66px; height:66px; }
         .head .title-cell { padding:0 14px; vertical-align:middle; }
         .head .title-cell h1 { font-size:20px; margin:0 0 2px; font-weight:bold; letter-spacing:.2px; color:#1a1a1a; }
@@ -89,7 +89,7 @@
         <tr>
             <td class="logo-cell">
                 @if(file_exists($logoSrc))
-                <img src="{{ $logoSrc }}" alt="logo">
+                <img src="{{ $logoSrc }}" alt="logo" style="width:110px; height:100px;">
                 @endif
             </td>
             <td class="title-cell">
@@ -125,10 +125,10 @@
                 <p><strong>Contact No.:</strong> {{ vipMaskNumber($pilgrim->contact_no ?? $registration->mobile_number) }}</p>
                 <p><strong>Address:</strong> {{ $pilgrim->address ?? $registration->group_name ?? '-' }}</p>
                 <p><strong>Service Name:</strong> {{ $registration->service_name }}</p>
-                <p><strong>Seva Amount:</strong> ₹{{ number_format($registration->seva_amount ?? 0, 0) }}</p>
+                <p><strong>Seva Amount:</strong> &#8377;{{ number_format($registration->seva_amount ?? 0, 0) }}</p>
                 <p><strong>No. of free Laddus:</strong> {{ $registration->no_of_free_laddus ?? 0 }}</p>
-                <p><strong>Hundi Offering:</strong> ₹{{ number_format($registration->hundi_offering ?? 0, 0) }}</p>
-                <p><strong>Total Amount:</strong> ₹{{ number_format($registration->total_amount ?? 0, 0) }}</p>
+                <p><strong>Hundi Offering:</strong> &#8377;{{ number_format($registration->hundi_offering ?? 0, 0) }}</p>
+                <p><strong>Total Amount:</strong> &#8377;{{ number_format($registration->total_amount ?? 0, 0) }}</p>
                 <p><strong>Payment Status:</strong> {{ $registration->payment_status ?? '-' }}</p>
                 <p><strong>Booking Status:</strong> {{ $registration->booking_status ?? '-' }}</p>
             </td>
