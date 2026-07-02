@@ -59,7 +59,7 @@
     $reportDateTime = $registration->slot
         ?? optional($registration->tr_date_time)->format('Y-m-d h:i A')
         ?? optional($registration->created_at)->format('Y-m-d h:i A');
-    $logoSrc = ($settings && $settings->logo) ? public_path('storage/'.$settings->logo) : public_path('images/logo.png');
+    $logoSrc = $logoPath ?? (\App\Support\UploadService::resolvePublicPath(optional($settings)->logo));
     $pilgrimCount = $registration->pilgrims->count();
 
     // Build a plain-text pilgrim roster (name, age, gender) so scanning the

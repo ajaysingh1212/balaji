@@ -167,7 +167,9 @@ class VipDarshanController extends Controller
             $settings = SiteSetting::orderByDesc('created_at')->first();
         }
 
-        $pdf = Pdf::loadView('vip.ticket', compact('registration', 'settings'));
+        $logoPath = UploadService::resolvePublicPath(optional($settings)->logo);
+
+        $pdf = Pdf::loadView('vip.ticket', compact('registration', 'settings', 'logoPath'));
 
         return $pdf->stream('VIP-Darshan-Ticket-' . $registration->registration_number . '.pdf');
     }
@@ -181,7 +183,9 @@ class VipDarshanController extends Controller
             $settings = SiteSetting::orderByDesc('created_at')->first();
         }
 
-        $pdf = Pdf::loadView('vip.ticket', compact('registration', 'settings'));
+        $logoPath = UploadService::resolvePublicPath(optional($settings)->logo);
+
+        $pdf = Pdf::loadView('vip.ticket', compact('registration', 'settings', 'logoPath'));
 
         return $pdf->download('VIP-Darshan-Ticket-' . $registration->registration_number . '.pdf');
     }
