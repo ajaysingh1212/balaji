@@ -150,7 +150,7 @@
             </td>
         </tr>
     </table>
-  
+
     <table class="footer">
         <tr>
             <td class="note">Note: Electronically generated details do not require any signature</td>
